@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pw-mcp"
+version = "0.1.0"
+description = "Playwright MCP server (Python)"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.112.1",
+  "uvicorn>=0.30.6",
+  "playwright>=1.48.0",
+  "GitPython>=3.1.43"
+]
+
+[project.scripts]
+pw-mcp = "pw_mcp.server:main"
