@@ -3,22 +3,43 @@ __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
-*.pyc
-.venv/
+*.env
+.env
 venv/
 ENV/
+build/
+dist/
+*.egg-info/
 
-# Node.js
-node_modules/
-
-# Playwright
-src/pw_mcp/generated-tests/
-*.spec.ts
-
-# IDEs
-.idea/
-.vscode/
-
-# OS files
+# OS
 .DS_Store
 Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+
+# Scripts
+*.sh~
+*.ps1~
+
+# Java/Gradle (if generated)
+*.class
+.gradle/
+build/
+out/
+
+# Misc
+*.bak
+*.tmp
+
+# Test output
+/test-output/
+
+# Git
+.git/
+
