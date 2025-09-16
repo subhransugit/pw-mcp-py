@@ -92,9 +92,12 @@ def tool(call: ToolCall):
     if t == "generate_playwright_test":
         tests_root = pathlib.Path(i["testsRoot"]).resolve()
         tests_root.mkdir(parents=True, exist_ok=True)
-        name = i.get("name") or "generated.spec.ts"
         scenario = i.get("scenario") or "Generated scenario"
         steps = i.get("steps") or []
+
+        # Generate unique filename per scenario
+        scenario_safe = scenario.replace(" ", "_").replace("'", "").replace('"', "")
+        name = i.get("name") or f"{scenario_safe}.spec.ts"
 
         spec_code = _gen_spec_code(scenario, steps)
         spec_path = tests_root / name
